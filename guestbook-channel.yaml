@@ -1,0 +1,8 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: guestbook-channel
+  namespace: guestbook
+spec:
+  type: GitHub
+  pathname: https://github.com/davidmccarty/guestbook

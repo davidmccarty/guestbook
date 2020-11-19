@@ -1,8 +1,9 @@
 # Values
 
+image: davidmccarty/guestbook:1.0.0
+
 replicaCount: 2
 
-# For some dev env (like minikube), you may need to set the type to NodePort
 service:
   type: LoadBalancer
   port: 3000

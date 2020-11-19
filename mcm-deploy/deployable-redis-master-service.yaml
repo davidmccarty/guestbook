@@ -1,0 +1,38 @@
+apiVersion: core.hybridapp.io/v1alpha1
+kind: Deployable
+metadata:
+  name: service-guestbook-redis-master
+  namespace: guestbook
+  generation: 1
+  labels:
+    application: guestbook
+    version: 1.0.0
+spec:
+  hybridtemplates:
+    - deployerType: kubernetes
+      template:
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: redis-master
+          namespace: guestbook
+          labels:
+            app: redis
+            role: master
+            tier: backend
+        spec:
+          clusterIP: 172.21.82.218
+          ports:
+            - name: redis
+              port: 6379
+              protocol: TCP
+              targetPort: 6379
+          selector:
+            app: redis
+            role: master
+            tier: backend
+          sessionAffinity: None
+          type: ClusterIP
+  placement:
+    deployers:
+      - namespace: guestbook

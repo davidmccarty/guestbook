@@ -1,0 +1,10 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: guestbook-helm-channel
+  namespace: guestbook
+  labels:
+    app: guestbook
+spec:
+  type: HelmRepo
+  pathname: https://davidmccarty.github.io/guestbook-helm

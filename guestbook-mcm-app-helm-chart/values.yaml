@@ -1,0 +1,17 @@
+replicaCount: 1
+
+appInClusterNamespace: default
+
+targetCluster:
+  labelSelector:
+    matchLabels:
+      #vendor: "ICP"
+      #region: "US"
+      #environment: Dev
+      #datacenter: "toronto"
+      #owner: "marketing"
+  resourceSelector:
+    type: cpu
+  compliances: ""
+
+chartRepoURL: https://github.com/davidmccarty/guestbook-helm.git

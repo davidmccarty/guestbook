@@ -4,19 +4,19 @@ kind: Deployment
 metadata:
   name: redis-slave
   labels:
-    app: redis
+    app: guestbook
 spec:
   selector:
     matchLabels:
-      app: redis
-      role: slave
+      app: guestbook
+      role: redis-slave
       tier: backend
-  replicas: 2
+  replicas: {{ .Values.replicaCountRedisSlave }}
   template:
     metadata:
       labels:
-        app: redis
-        role: slave
+        app: guestbook
+        role: redis-slave
         tier: backend
     spec:
       containers:

@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: redis-master
   labels:
-    app: redis
-    role: master
+    app: guestbook
+    role: redis-master
     tier: backend
 spec:
   ports:
@@ -12,6 +12,6 @@ spec:
     port: {{ .Values.redis.port }}
     targetPort: {{ .Values.redis.port }}
   selector:
-    app: redis
-    role: master
+    app: guestbook
+    role: redis-master
     tier: backend

@@ -2,7 +2,8 @@
 
 image: davidmccarty/guestbook:1.0.0
 
-replicaCount: 2
+replicaCountFrontEnd: 3
+replicaCountRedisSlave: 1
 
 service:
   type: LoadBalancer

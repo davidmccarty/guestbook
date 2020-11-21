@@ -4,14 +4,14 @@ kind: Service
 metadata:
   name: redis-slave
   labels:
-    app: redis
-    role: slave
+    app: guestbook
+    role: redis-slave
     tier: backend
 spec:
   ports:
   - port: {{ .Values.redis.port }}
   selector:
-    app: redis
-    role: slave
+    app: guestbook
+    role: redis-slave
     tier: backend
 {{- end }}
